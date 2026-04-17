@@ -1,0 +1,60 @@
+{
+  "author": "Skiftle",
+  "bin": {
+    "apiwork": "./dist/bin/apiwork.js"
+  },
+  "bugs": {
+    "url": "https://github.com/skiftle/apiwork-js/issues"
+  },
+  "description": "JavaScript toolkit for Apiwork.",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.12",
+    "@skiftle/biome-config": "0.0.7",
+    "@types/node": "25.6.0",
+    "tsup": "8.5.1",
+    "typescript": "6.0.2",
+    "vitest": "4.1.4"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./sorbus": {
+      "import": "./dist/sorbus/index.js",
+      "types": "./dist/sorbus/index.d.ts"
+    },
+    "./typescript": {
+      "import": "./dist/typescript/index.js",
+      "types": "./dist/typescript/index.d.ts"
+    },
+    "./zod": {
+      "import": "./dist/zod/index.js",
+      "types": "./dist/zod/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/skiftle/apiwork-js",
+  "license": "MIT",
+  "name": "apiwork",
+  "packageManager": "pnpm@10.33.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skiftle/apiwork-js.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "check": "biome check .",
+    "check:write": "biome check --write .",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.0.1"
+}
