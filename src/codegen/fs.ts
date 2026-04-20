@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
+/** @internal */
 export async function writeFiles(
   outdir: string,
   files: Map<string, string>,

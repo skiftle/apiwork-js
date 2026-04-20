@@ -11,6 +11,7 @@ import {
 } from './options';
 import { collectParamReferences } from './references';
 
+/** @internal */
 export interface EndpointOptions {
   endpoints: boolean;
   reexportChildren: boolean;
@@ -29,6 +30,7 @@ interface ActionFile {
   typeLines: string[];
 }
 
+/** @internal */
 export function buildEndpoints(
   schema: Schema,
   scopeIndex: Map<string, string | null>,

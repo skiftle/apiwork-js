@@ -15,6 +15,7 @@ const generators: Record<string, GenerateFn> = {
   zod: generateZod,
 };
 
+/** @internal */
 export async function run(args: string[]): Promise<void> {
   const { positionals, values } = parseArgs({
     allowPositionals: true,

@@ -4,6 +4,7 @@ import type { Schema } from '../types';
 import { resolveClientIdentifier, resolveEndpointIdentifier } from '../codegen';
 import { camelCase, pascalCase } from '../utils';
 
+/** @internal */
 export function buildClient(
   schema: Schema,
   resolvedOptions: ResolvedGenerateOptions,

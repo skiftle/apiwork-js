@@ -8,6 +8,7 @@ import {
 } from '../codegen';
 import { camelCase } from '../utils';
 
+/** @internal */
 export function buildContract(
   schema: Schema,
   resolvedOptions: ResolvedGenerateOptions,

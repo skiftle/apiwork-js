@@ -51,17 +51,20 @@ export interface GenerateOptions {
   ) => string;
 }
 
+/** @internal */
 export interface ResolvedGenerateOptions {
   fileCase: FileCase;
   importExtension: string;
   transformIdentifier: (identifier: string, source: IdentifierSource) => string;
 }
 
+/** @internal */
 export interface GeneratorContext {
   options: ResolvedGenerateOptions;
   scopeIndex: Map<string, string | null>;
 }
 
+/** @internal */
 export function resolveGenerateOptions(
   options: GenerateOptions,
 ): ResolvedGenerateOptions {
@@ -78,6 +81,7 @@ export function resolveGenerateOptions(
   };
 }
 
+/** @internal */
 export function formatFileName(name: string, fileCase: FileCase): string {
   switch (fileCase) {
     case 'kebab':
@@ -91,6 +95,7 @@ export function formatFileName(name: string, fileCase: FileCase): string {
   }
 }
 
+/** @internal */
 export function resolveDomainIdentifier(
   rawName: string,
   context: GeneratorContext,
@@ -101,6 +106,7 @@ export function resolveDomainIdentifier(
   return context.options.transformIdentifier(pascalCase(rawName), source);
 }
 
+/** @internal */
 export function resolveEndpointIdentifier(
   identifier: string,
   context: GeneratorContext,
@@ -108,6 +114,7 @@ export function resolveEndpointIdentifier(
   return context.options.transformIdentifier(identifier, 'endpoint');
 }
 
+/** @internal */
 export function resolveClientIdentifier(
   identifier: string,
   context: GeneratorContext,

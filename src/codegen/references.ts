@@ -1,5 +1,6 @@
 import type { Enum, Param, Type } from '../types';
 
+/** @internal */
 export function collectTypeReferences(
   types: Type[],
   enums: Enum[],
@@ -34,6 +35,7 @@ export function collectTypeReferences(
   return references;
 }
 
+/** @internal */
 export function collectParamReferences(
   param: Param,
   references: Set<string>,

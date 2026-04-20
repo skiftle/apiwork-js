@@ -14,6 +14,7 @@ import {
 import { formatFileName, resolveDomainIdentifier } from './options';
 import { collectTypeReferences } from './references';
 
+/** @internal */
 export interface SchemaOptions {
   zod: boolean;
 }
@@ -23,6 +24,7 @@ interface ScopeGroup {
   types: Type[];
 }
 
+/** @internal */
 export function buildScopeIndex(schema: Schema): Map<string, string | null> {
   const index = new Map<string, string | null>();
 
@@ -37,6 +39,7 @@ export function buildScopeIndex(schema: Schema): Map<string, string | null> {
   return index;
 }
 
+/** @internal */
 export function buildSchemas(
   schema: Schema,
   options: SchemaOptions,

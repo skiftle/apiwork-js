@@ -1,5 +1,6 @@
 import { camelCase } from './camel-case';
 
+/** @internal */
 export function camelCaseKeys(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map(camelCaseKeys);

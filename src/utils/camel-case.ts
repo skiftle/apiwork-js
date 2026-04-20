@@ -1,3 +1,4 @@
+/** @internal */
 export function camelCase(name: string): string {
   const leading = /^_+/.exec(name)?.[0] ?? '';
   return (

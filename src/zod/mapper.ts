@@ -33,6 +33,7 @@ const FORMAT_MAP: Record<string, string> = {
   uuid: 'z.uuid()',
 };
 
+/** @internal */
 export function generateEnumSchema(
   _enum: Enum,
   context: GeneratorContext,
@@ -45,6 +46,7 @@ export function generateEnumSchema(
   return `export const ${name}Schema = z.enum([${values}]);`;
 }
 
+/** @internal */
 export function generateObjectSchema(
   type: ObjectType,
   context: GeneratorContext,
@@ -82,6 +84,7 @@ export function generateObjectSchema(
   return `export const ${name}Schema = z.object({\n${properties}\n});`;
 }
 
+/** @internal */
 export function generateUnionSchema(
   type: UnionType,
   context: GeneratorContext,
@@ -114,6 +117,7 @@ export function generateUnionSchema(
   return `export const ${name}Schema = ${unionCode};`;
 }
 
+/** @internal */
 export function mapParamToZod(param: Param, context: GeneratorContext): string {
   let base = mapParamBase(param, context);
   base = applyModifiers(base, param);

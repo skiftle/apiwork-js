@@ -3,12 +3,14 @@ import type { Enum, ObjectType, Param, UnionType } from '../types';
 
 import { resolveDomainIdentifier } from '../codegen';
 
+/** @internal */
 export function generateEnum(_enum: Enum, context: GeneratorContext): string {
   const name = resolveDomainIdentifier(_enum.name, context);
   const values = _enum.values.map((value) => `'${value}'`).join(' | ');
   return `export type ${name} = ${values};`;
 }
 
+/** @internal */
 export function generateInterface(
   type: ObjectType,
   context: GeneratorContext,
@@ -33,6 +35,7 @@ export function generateInterface(
   return `export interface ${name} {\n${fields}\n}`;
 }
 
+/** @internal */
 export function generateUnionType(
   type: UnionType,
   context: GeneratorContext,
@@ -57,6 +60,7 @@ export function generateUnionType(
   return `export type ${name} = ${variants.join(' | ')};`;
 }
 
+/** @internal */
 export function mapParamToType(
   param: Param,
   context: GeneratorContext,
@@ -111,6 +115,7 @@ function mapBaseType(param: Param, context: GeneratorContext): string {
   }
 }
 
+/** @internal */
 export function mapObjectParam(
   param: {
     shape: Param[];
@@ -133,6 +138,7 @@ export function mapObjectParam(
   return `{ ${fields} }`;
 }
 
+/** @internal */
 export function isOptionalField(param: Param): boolean {
   return param.optional === true;
 }
