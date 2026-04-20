@@ -1,0 +1,6 @@
+pre-push:
+  commands:
+    check:
+      run: pnpm run check
+    typecheck:
+      run: pnpm run typecheck
