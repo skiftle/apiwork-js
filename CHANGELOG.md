@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4](https://github.com/skiftle/apiwork-js/compare/apiwork-v0.0.3...apiwork-v0.0.4) (2026-09-07)
+
+
+### Bug Fixes
+
+* add missing semicolon in generated endpoint interfaces ([047afa8](https://github.com/skiftle/apiwork-js/commit/047afa836ad09d3437a31cfa46917875e6edbaa0))
+* decode decimals from their string wire format ([b5c6938](https://github.com/skiftle/apiwork-js/commit/b5c69385cbbf3d155bcfe349959e274f2024c77a))
+
 ## [0.0.3](https://github.com/skiftle/apiwork-js/compare/apiwork-v0.0.2...apiwork-v0.0.3) (2026-04-18)
 
 
