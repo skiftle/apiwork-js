@@ -422,7 +422,7 @@ function generateDefinitionType(parts: ActionParts): string {
     fields.push(`errors: ${typeName}Errors`);
   }
 
-  return `export interface ${typeName} { ${fields.join('; ')} }`;
+  return `export interface ${typeName} { ${fields.join('; ')}; }`;
 }
 
 function generateActionSchemas(
