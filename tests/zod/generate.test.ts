@@ -75,7 +75,7 @@ describe('generate (zod) — primitives', () => {
     ['string', 'str: z.string(),'],
     ['integer', 'int: z.number().int(),'],
     ['number', 'num: z.number(),'],
-    ['decimal', 'dec: z.number(),'],
+    ['decimal', 'dec: z.coerce.number(),'],
     ['boolean', 'bool: z.boolean(),'],
     ['date', 'd: z.iso.date(),'],
     ['datetime', 'dt: z.iso.datetime(),'],
@@ -97,6 +97,7 @@ describe('generate (zod) — primitives', () => {
       'nullableOptionalStr: z.string().nullable().optional(),',
     ],
     ['default', "defaultedStr: z.string().default('hello'),"],
+    ['decimal default', 'defaultedDec: z.coerce.number().default(1.0),'],
   ])('maps %s to `%s`', (_label, expected) => {
     expect(api).toContain(expected);
   });

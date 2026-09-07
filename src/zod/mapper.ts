@@ -8,7 +8,7 @@ const TYPE_MAP: Record<string, string> = {
   boolean: 'z.boolean()',
   date: 'z.iso.date()',
   datetime: 'z.iso.datetime()',
-  decimal: 'z.number()',
+  decimal: 'z.coerce.number()',
   integer: 'z.number().int()',
   number: 'z.number()',
   string: 'z.string()',
@@ -295,7 +295,7 @@ function serializeDefault(param: Param): string {
     return "''";
   }
   if (typeof value === 'string') {
-    return `'${value}'`;
+    return param.type === 'decimal' ? value : `'${value}'`;
   }
   if (typeof value === 'boolean' || typeof value === 'number') {
     return String(value);
